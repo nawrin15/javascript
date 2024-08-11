@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+    <body>
+        <a><button> View Blob</button></a>
+    </body>
+    <script>
+        const a = document.querySelector('a');
+        const data = "bla bla bla bla bla bla bla"
+        const blob = new Blob([data], {type: 'text/plain'});
+        console.log(blob)
+        const url = URL.createObjectURL(blob);
+        console.log("url -> ", url)
+        a.href = url;
+        a.download = "blob-to-download.txt";
+    </script>
+</html>

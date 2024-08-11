@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+    <body>
+        <input type="file" accept="image/*"/>
+    </body>
+    <script>
+        const input = document.querySelector('change', () => {
+            console.log(input.files[0])
+            const url = URL.createObjectURL(input.files[0]);
+            console.log('url--> ', url)
+            const img = new Image();
+            img.src = url;
+            img.onload = () => {
+                document.body.appendChild(img);
+            }
+        })
+    </script>
+</html>
